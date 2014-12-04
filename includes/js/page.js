@@ -19,18 +19,21 @@ function options_framework_tabs()
 	if ( typeof(localStorage) != 'undefined' ) {
 		active_tab = localStorage.getItem('active_tab');
 	}
-	console.log(active_tab, active_tab.indexOf('http'));
-	if(active_tab.indexOf('http') == -1)
+	
+	if(active_tab != null)
 	{
-		if ( active_tab != '' && jQuery(active_tab).length) 
+		if(active_tab.indexOf('http') == -1)
 		{
-			jQuery(active_tab).fadeIn();
-			jQuery(active_tab + '-tab').addClass('nav-tab-active');
-		} 
-		else 
-		{
-			jQuery('.group:first').fadeIn();
-			jQuery('.nav-tab-wrapper-gc a:first').addClass('nav-tab-active');
+			if ( active_tab != '' && jQuery(active_tab).length) 
+			{
+				jQuery(active_tab).fadeIn();
+				jQuery(active_tab + '-tab').addClass('nav-tab-active');
+			} 
+			else 
+			{
+				jQuery('.group:first').fadeIn();
+				jQuery('.nav-tab-wrapper-gc a:first').addClass('nav-tab-active');
+			}	
 		}	
 	}
 	

@@ -80,6 +80,10 @@ div.main-slider figcaption{
 	z-index: 3;
 }
 
+div.main-slider figcaption a{
+	color: #13357a;	
+}
+
 
 div.main-slider figcaption strong{
 	font-family: 'etelka_narrow_text_probold';
@@ -161,6 +165,15 @@ div.main-slider aside ol li a:hover{
 
 .main header .menu-wrap .logo{
 	float: left;
+	position: relative;
+}
+
+.main header .menu-wrap .logo .address{
+	position: absolute;
+	color: black;
+	font-size: 14px;
+	text-align: center;
+	width: 100%;
 }
 
 .main header .menu-wrap ul.menu{

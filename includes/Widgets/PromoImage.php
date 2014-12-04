@@ -22,13 +22,14 @@ class PromoImage extends \WP_Widget{
 	function widget($args, $instance) 
 	{
 		$arr = array(
-			'image' => $instance['image'] ? $instance['image'] : 'http://placehold.it/301x306',	
+			'image' => isset($instance['image']) ? $instance['image'] : 'http://placehold.it/301x306',	
+			'url' => isset($instance['url']) ? $instance['url'] : '#',	
 		);
 		extract($arr);
 
 		echo $args['before_widget'];
 		?>
-		<img src="<?php echo $image; ?>" alt="Promo image">
+		<a href="<?php echo $url; ?>"><img src="<?php echo $image; ?>" alt="Promo image"></a>
 		<?php
 		echo $args['after_widget'];
 	}
@@ -36,13 +37,15 @@ class PromoImage extends \WP_Widget{
 	function update( $new_instance, $old_instance ) 
 	{
 		$instance['image'] = strip_tags($new_instance['image']);
+		$instance['url'] = strip_tags($new_instance['url']);
 		return $instance;
 	}
 
 	function form( $instance ) 
 	{
 		$arr = array(
-			'image' => isset($instance['image']) ? $instance['image'] : '',	
+			'image' => isset($instance['image']) ? $instance['image'] : '',
+			'url' => isset($instance['url']) ? $instance['url'] : '',	
 		);
 		
 
@@ -53,6 +56,10 @@ class PromoImage extends \WP_Widget{
 			<label for="<?php echo $this->get_field_id('image'); ?>" style="display: block"><?php _e('Image:') ?></label>
 			<input type="text" id="<?php echo $this->get_field_id('image'); ?>" name="<?php echo $this->get_field_name('image'); ?>" value="<?php echo $image; ?>" />
 			<button id="<?php echo $this->get_field_id('image'); ?>-btn" type="button" class="button" onclick="loadImage(event, this)">Load</button>
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id('url'); ?>" style="display: block"><?php _e('URL:') ?></label>
+			<input type="text" id="<?php echo $this->get_field_id('url'); ?>" name="<?php echo $this->get_field_name('url'); ?>" value="<?php echo $url; ?>" />
 		</p>
 		<?php
 	}

@@ -31,7 +31,13 @@ $count  = intval(get_option('mso_count_slides'));
 	<header>
 		<div class="menu-wrap">
 			<a href="#" class="toggle-menu mobile" data-menu-id="menu-main"><i class="fa fa-bars"></i></a>
-			<a href="/" class="logo"><img src="<?php echo TDU.'/images/hedaer_logo.png'; ?>" alt="Logo"></a>	
+			<a href="/" class="logo">
+				<img src="<?php echo TDU.'/images/hedaer_logo.png'; ?>" alt="Logo">
+				<div class="address">
+					<?php echo (string) get_option('gs_header_address'); ?>
+				</div>
+			</a>
+				
 			<?php
 				wp_nav_menu( 
 					array( 
@@ -40,14 +46,6 @@ $count  = intval(get_option('mso_count_slides'));
 					) 
 				);
 			?>
-			<!-- <ul class="menu-lang" id="menu-main-lang">
-				<li class="active menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-35" id="menu-item-35">
-					<a href="/">RU</a>
-				</li>
-				<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-36" id="menu-item-36">
-					<a href="/">EN</a>
-				</li>
-			</ul> -->
 		</div>
 		<?php echo $slider->getHTML(array('posts_per_page' => $count)); ?>
 	</header>

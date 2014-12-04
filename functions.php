@@ -32,6 +32,11 @@ $ccollection_global_settings = new Controls\ControlsCollection(
 			array('placeholder' => 'Enter your address')
 		),
 		new Controls\Textarea(
+			'Header Address', 
+			array('default-value' => 'Slévačská 744/1 , 190 00 Praha 9'),
+			array('placeholder' => 'Enter your header address')
+		),
+		new Controls\Textarea(
 			'Phone text',
 			array('default-value' => '+420 777-642-542'),
 			array('placeholder' => 'Enter you phone text')
@@ -63,6 +68,12 @@ $ccollection_slider = new Controls\ControlsCollection(
 			'Sale',
 			array(
 				'description' => 'Enter you sale text'
+			)
+		),
+		new Controls\Text(
+			'URL',
+			array(
+				'description' => 'Enter your destination url'
 			)
 		)
 	)

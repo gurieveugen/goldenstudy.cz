@@ -74,13 +74,15 @@ class Slider{
 		$thumb = wp_get_attachment_image_src(get_post_thumbnail_id($slide->ID), 'full');
 	    $thumb = is_array($thumb) ? $thumb[0] : 'http://placehold.it/1020x328';
 	    $sale  = (string) get_post_meta($slide->ID, 'aso_sale', true);
+	    $url   = (string) get_post_meta($slide->ID, 'aso_url', true);
+	    $countent = strlen(trim($url)) ? sprintf('<a href="%s">%s</a>', $url, $slide->post_content) : $slide->post_content;
 		ob_start();
 		?>
 		<li>
 			<figure>
 				<img src="<?php echo $thumb; ?>" alt="<?php echo $slide->post_title; ?>">
 				<figcaption>
-					<?php echo $slide->post_content; ?>
+					<?php echo $countent; ?>
 					<?php echo $this->wrapSale($sale); ?>
 				</figcaption>
 			</figure>
@@ -99,7 +101,7 @@ class Slider{
 	 */
 	private function wrapSale($sale)
 	{	
-		if(strlen($sale))
+		if(strlen(trim($sale)))
 		{
 			return sprintf('<div class="sale"><span class="title">Акция</span><span class="value">%s</span></div>', $sale);
 		}
