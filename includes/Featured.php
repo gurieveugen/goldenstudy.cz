@@ -52,11 +52,12 @@ class Featured{
 	 */
 	public function wrapFeatured($f)
 	{
-		$thumb = 'http://placehold.it/232x192';
+		$thumb = '';
 		if(has_post_thumbnail($f->ID))
 		{
 			$thumb = wp_get_attachment_image_src(get_post_thumbnail_id($f->ID), 'featured');
 			$thumb = is_array($thumb) ? $thumb[0] : 'http://placehold.it/232x192';
+			$thumb = '<img src="'.$thumb.'" class="thumbnail" alt="'.\__::attribute($f->post_title).'">';
 		}
 	    $sub   = (string) get_post_meta($f->ID, 'apo_subtitle', true);
 	    ob_start();
@@ -68,7 +69,7 @@ class Featured{
 	    			<span class="date"><?php echo date('d.m.Y', strtotime($f->post_date)); ?></span>
 	    		</div>
 	    		<div class="featured-holder">
-	    			<img src="<?php echo $thumb; ?>" class="thumbnail" alt="<?php echo \__::attribute($f->post_title); ?>">
+	    			<?php echo $thumb; ?>
 	    			<div class="txt">
 	    				<?php echo $f->post_content; ?>	
 	    			</div>

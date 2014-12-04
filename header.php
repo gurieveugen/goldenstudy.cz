@@ -17,6 +17,7 @@ $count  = intval(get_option('mso_count_slides'));
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width">
 	<title><?php wp_title( ' ', true, 'right' ); ?></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<!--[if lt IE 9]>
@@ -29,6 +30,7 @@ $count  = intval(get_option('mso_count_slides'));
 <div id="main" class="main">
 	<header>
 		<div class="menu-wrap">
+			<a href="#" class="toggle-menu mobile" data-menu-id="menu-main"><i class="fa fa-bars"></i></a>
 			<a href="/" class="logo"><img src="<?php echo TDU.'/images/hedaer_logo.png'; ?>" alt="Logo"></a>	
 			<?php
 				wp_nav_menu( 

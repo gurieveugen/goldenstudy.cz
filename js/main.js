@@ -15,8 +15,26 @@ jQuery(document).ready(function(){
 	// ==============================================================
 	// Fix text shifting
 	// ==============================================================
-	jQuery('#menu-main > li > a').each(function(){
-		jQuery(this).parent().width(jQuery(this).outerWidth()+5);
+	if(jQuery(window).width() > 768)
+	{
+		jQuery('#menu-main > li > a').each(function(){
+			jQuery(this).parent().width(jQuery(this).outerWidth()+5);
+		});	
+	}
+	// ==============================================================
+	// Toggle menu
+	// ==============================================================
+	jQuery('.toggle-menu').click(function(e){
+		var menu = jQuery(this).data('menuId');
+
+		if(typeof(menu) != 'undefined')
+		{
+			menu = '#'+menu;
+			menu = jQuery(menu);
+		}
+		menu.toggleClass('active');
+		console.log(menu);
+		e.preventDefault();
 	});
 	// ==============================================================
 	// Boxer

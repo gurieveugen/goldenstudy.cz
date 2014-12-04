@@ -326,6 +326,9 @@ function themeScriptsAndStyles()
 	// Styles
 	// ==============================================================
 	wp_enqueue_style('main', TDU.'/style.css');
+	wp_enqueue_style('main-long', TDU.'/css/lg.css', array(), false, '(min-width: 768px)');
+	wp_enqueue_style('main-small', TDU.'/css/sm.css', array(), false, '(max-width: 768px)');
+	wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
 	wp_enqueue_style('fonts', TDU.'/css/fonts/stylesheet.css');
 	wp_enqueue_style('boxer', TDU.'/css/jquery.fs.boxer.min.css');
 	wp_enqueue_style('selecter', TDU.'/css/jquery.fs.selecter.css');
