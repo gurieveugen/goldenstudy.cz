@@ -83,7 +83,7 @@ class Slider{
 				<img src="<?php echo $thumb; ?>" alt="<?php echo $slide->post_title; ?>">
 				<figcaption>
 					<?php echo $countent; ?>
-					<?php echo $this->wrapSale($sale); ?>
+					<?php echo $this->wrapSale($sale, $url); ?>
 				</figcaption>
 			</figure>
 		</li>
@@ -99,10 +99,18 @@ class Slider{
 	 * @param  string $sale --- sale text
 	 * @return string --- HTML code
 	 */
-	private function wrapSale($sale)
+	private function wrapSale($sale, $url = '')
 	{	
 		if(strlen(trim($sale)))
 		{
+			if(strlen(trim($url)))
+			{
+				return sprintf(
+					'<div class="sale"><a href="%1$s" class="title">Акция</a><a href="%1$s" class="value">%2$s</a></div>', 
+					$url, 
+					$sale
+				);
+			}
 			return sprintf('<div class="sale"><span class="title">Акция</span><span class="value">%s</span></div>', $sale);
 		}
 		return '';

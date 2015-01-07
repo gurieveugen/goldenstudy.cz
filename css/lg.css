@@ -92,18 +92,26 @@ div.main-slider figcaption strong{
 }
 
 div.main-slider figcaption .sale{
-	position: absolute;
+	position: relative;
 	display: block;
 	font-family: 'etelka_narrow_text_proregular';
 	font-size: 18px;
-	width: 278px;
 	height: 43px;
-	background: #fff;
+	background: transparent;
 	border-radius: 7px;
 	right: 0;
 	color: black;
-	padding: 0 0 0 33px;
+	padding: 0;
 	line-height: 43px;
+}
+
+div.main-slider figcaption .sale .title{
+    float: left;
+	
+    background: #fff;
+    padding: 0 40px 0 20px;
+    display: block;
+    border-radius: 7px;
 }
 
 div.main-slider figcaption .sale .value{
@@ -111,10 +119,11 @@ div.main-slider figcaption .sale .value{
 	background: #fae50c;
 	font-family: 'etelka_narrow_text_probold';
 	font-size: 30px;
-	position: absolute;
-	right: 0;
+	position: relative;
 	color: #13357a;
 	border-radius: 7px;
+	float: left;
+	margin: 0 0 0 -15px;
 }
 
 div.main-slider aside ol{
@@ -196,7 +205,7 @@ div.main-slider aside ol li a:hover{
 	display:none;
 	position: absolute;
 	min-width: 100%;
-	margin: 0;
+	margin: 0 0 0 -15px;
 	padding: 0;
 }
 
@@ -204,7 +213,7 @@ div.main-slider aside ol li a:hover{
 	display: block;
 	min-width: 100%;
 	margin: 0 0 1px;
-	padding: 0;
+	padding: 0 15px;
 }
 
 .main header .menu-wrap ul.menu li .sub-menu li a{

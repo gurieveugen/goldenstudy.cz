@@ -58,7 +58,7 @@ div.main-slider figcaption strong {
     font-size: 28px;
     font-weight: normal;
 }
-div.main-slider figcaption .sale {
+/*div.main-slider figcaption .sale {
     background: none repeat scroll 0 0 #fff;
     border-radius: 5px;
     color: black;
@@ -81,7 +81,42 @@ div.main-slider figcaption .sale .value {
     padding: 0 15px;
     position: absolute;
     right: 0;
+}*/
+div.main-slider figcaption .sale{
+    position: relative;
+    display: block;
+    font-family: 'etelka_narrow_text_proregular';
+    font-size: 12px;
+    height: 23px;
+    background: transparent;
+    border-radius: 5px;
+    right: 0;
+    color: black;
+    padding: 0;
+    line-height: 23px;
 }
+
+div.main-slider figcaption .sale .title{
+    float: left;
+    
+    background: #fff;
+    padding: 0 26px 0 13px;
+    display: block;
+    border-radius: 5px;
+}
+
+div.main-slider figcaption .sale .value{
+    padding: 0 15px;
+    background: #fae50c;
+    font-family: 'etelka_narrow_text_probold';
+    font-size: 12px;
+    position: relative;
+    color: #13357a;
+    border-radius: 5px;
+    float: left;
+    margin: 0 0 0 -10px;
+}
+
 div.main-slider aside ol {
     bottom: 17px;
     left: 5%;
@@ -125,9 +160,29 @@ div.main-slider aside ol li a.flex-active, div.main-slider aside ol li a:hover {
     padding: 0 15px;
 }
 .main header .menu-wrap .logo {
-    display: none;
     float: left;
 }
+
+.main header .menu-wrap .logo img{
+    display: none;
+}
+
+.main header .menu-wrap .contact-mobile{
+    color: white;
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    z-index: 10;
+}
+
+.main header .menu-wrap .contact-mobile a{
+    color: #fff;
+}
+
+.main header .menu-wrap .logo .address{
+    display: none;
+}
+
 .main header .menu-wrap ul.menu {
     display: none;
     float: left;

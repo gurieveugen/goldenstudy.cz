@@ -21,6 +21,11 @@ jQuery(document).ready(function(){
 			jQuery(this).parent().width(jQuery(this).outerWidth()+5);
 		});	
 	}
+	jQuery('.sub-menu').each(function(){
+		var a = jQuery(this).prev();
+		var width = parseInt(a.outerWidth()/2) - parseInt(jQuery(this).outerWidth()/2);
+		jQuery(this).css({left: width + 'px'});
+	});
 	// ==============================================================
 	// Toggle menu
 	// ==============================================================
@@ -33,7 +38,6 @@ jQuery(document).ready(function(){
 			menu = jQuery(menu);
 		}
 		menu.toggleClass('active');
-		console.log(menu);
 		e.preventDefault();
 	});
 	// ==============================================================

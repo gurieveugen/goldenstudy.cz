@@ -40,6 +40,11 @@ $ccollection_global_settings = new Controls\ControlsCollection(
 			'Phone text',
 			array('default-value' => '+420 777-642-542'),
 			array('placeholder' => 'Enter you phone text')
+		),
+		new Controls\Text(
+			'Contact email',
+			array('default-value' => 'info@goldenviza.cz'),
+			array('placeholder' => 'Enter you contact email')
 		)
 	)
 );
