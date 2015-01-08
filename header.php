@@ -30,15 +30,15 @@ $count  = intval(get_option('mso_count_slides'));
 <div id="main" class="main">
 	<header>
 		<div class="menu-wrap">
+			<div class="address">
+				<?php echo (string) get_option('gs_header_address'); ?>
+			</div>
 			<a href="#" class="toggle-menu mobile" data-menu-id="menu-main"><i class="fa fa-bars"></i></a>
 			<div class="contact-mobile mobile">
 				<?php echo (string) get_option('gs_phone_text'); ?>, <a href="mailto:<?php echo (string) get_option('gs_contact_email'); ?>"><?php echo (string) get_option('gs_contact_email'); ?></a>
 			</div>
 			<a href="/" class="logo">
 				<img src="<?php echo TDU.'/images/hedaer_logo.png'; ?>" alt="Logo">
-				<div class="address">
-					<?php echo (string) get_option('gs_header_address'); ?>
-				</div>
 			</a>
 				
 			<?php

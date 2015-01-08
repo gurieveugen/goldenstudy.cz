@@ -177,12 +177,26 @@ div.main-slider aside ol li a:hover{
 	position: relative;
 }
 
-.main header .menu-wrap .logo .address{
+.main header .menu-wrap .address{
 	position: absolute;
 	color: black;
 	font-size: 14px;
-	text-align: center;
 	width: 100%;
+	text-align: right;
+	top: 50px;
+	line-height: 14px;
+	right: -60px;
+}
+
+.main header .menu-wrap .address:after{
+	display: block;
+	content: '';
+	width: 4px;
+	height: 45px;
+	background: #fae50c;
+	position: absolute;
+	top: -3px;
+	right: -12px;
 }
 
 .main header .menu-wrap ul.menu{

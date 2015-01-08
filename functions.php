@@ -80,7 +80,11 @@ $ccollection_slider = new Controls\ControlsCollection(
 			array(
 				'description' => 'Enter your destination url'
 			)
-		)
+		),
+		new Controls\Media(
+			'Little man',
+			array('description' => 'Select your little man example')
+		),
 	)
 );
 
